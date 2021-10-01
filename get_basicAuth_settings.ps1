@@ -28,9 +28,6 @@ if ( ! ( Get-Module MSOnline) ) {
     }
 }
 
-###API Permissions Needed For App Registration#####
-##Microsoft Graph => Auditlog.Read.All (Delegated)##
-
 
 ###MICROSOFT SECRETS#####
 
