@@ -7,8 +7,11 @@ Microsoft recently made some updates surrounding their plans to turn off basic a
 
 Highlights:
 • Scope includes Exchange Web Services (EWS), Exchange ActiveSync (EAS), POP, IMAP, Remote PowerShell, MAPI, RPC, SMTP AUTH and OAB.
+
 • Effective October 1, 2022, Microsoft will begin to permanently disable Basic Auth in all tenants, regardless of usage (with the exception of SMTP Auth, which can still be re-enabled after that).
+
 • **MOST CONCERNING** Beginning early 2022, Microsoft will selectively pick tenants and disable Basic Auth for all affected protocols except SMTP AUTH for a period of 12-48 hours.
+
 o You can request that specific protocols not be turned off on a per tenant basis (instructions in article above)
 
 I wanted to provide some multi-tenant scripts to help in reporting on basic auth being used to prepare accordingly.
@@ -24,7 +27,9 @@ You will need to garner tokens and GUIDs from both the Secure Application Model.
 
 The project is composed of 3 Powershell Scripts:
 • Audit_Log_Activity.ps1 => Leverages Azure AD signin logs to present you will all basic auth sign-ins present within a 30 day window (Requires customers have Azure AD P1 license)
+
 • Get_basicAuth_settings.ps1 => Leverages Exchange Online Powershell to look for tenant-wide basic auth setttings
+
 • SMTP_auth_disabled.ps1 => Leverages Exchange Online Powershell to look for tenant-wide setting for SMTP auth.
 
 <H3>Audit_Log_Activity.ps1</H3>
